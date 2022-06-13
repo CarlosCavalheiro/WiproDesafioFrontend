@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto' 
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-grafico',
@@ -33,16 +33,17 @@ export class GraficoComponent implements OnInit {
       
       //Gráfico
       this.chart = new Chart('canvas', {
-        type: 'bar',
+        type: 'bar',                   
         data: {
           labels: this.rotuloFilme,
           datasets: [
             {
-              data: this.votoFilme,
-              borderColor: '#3e95cd',
+              data: this.votoFilme,              
               label: 'Total de Votos',
-              backgroundColor: '#3e95cd',
+              borderColor: '#3e95cd',
+              backgroundColor: '#3e95ff',
               borderWidth: 1,
+              borderRadius: 5,
             },
           ],
         },
